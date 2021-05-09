@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+html {
+	--green: green;
+	--red: red;
+	--blue: blue;
+	--yellow: yellow;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body,
+html,
+#root {
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#root {
+	position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.board {
+	width: 500px;
+	height: 500px;
+	border: 1px solid black;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: grid;
+	grid-template-columns: 2fr 1fr 2fr;
+	grid-template-rows: 2fr 1fr 2fr;
+	grid-auto-flow: row;
 }
 
-.App-link {
-  color: #61dafb;
+.color-outer {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.color-inner {
+	width: 80%;
+	height: 80%;
+	border: 2px solid black;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-auto-flow: row;
+	place-items: center;
+	background: white;
+}
+.circle {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 2px solid black;
+	overflow: hidden;
+	display: grid;
+	place-items: center;
+}
+/* .piece {
+	width: 120%;
+	height: 120%;
+	border-radius: 50%;
+} */
+
+.green {
+	background: var(--green);
+}
+.green .circle {
+	/* border: 2px solid var(--green); */
+}
+.yellow {
+	background: var(--yellow);
+}
+.yellow .circle {
+	/* border: 2px solid var(--yellow); */
+}
+.red {
+	background: var(--red);
+}
+.red .circle {
+	/* border: 2px solid var(--red); */
+}
+.blue {
+	background: var(--blue);
+}
+.blue .circle {
+	/* border: 2px solid var(--blue); */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.track {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-auto-flow: row;
+	place-items: center;
+}
+.track-odd {
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.track-even {
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.box {
+	width: 100%;
+	height: 100%;
+	border: 1px solid black;
 }

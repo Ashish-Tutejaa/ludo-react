@@ -111,3 +111,12 @@ html,
 	height: 100%;
 	border: 1px solid black;
 }
+
+.dice {
+	position: fixed;
+	width: 300px;
+	height: 300px;
+	border: 1px solid black;
+	top: 0px;
+	right: 0px;
+}
